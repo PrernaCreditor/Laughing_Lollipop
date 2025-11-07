@@ -13,7 +13,7 @@ const Header = () => {
   // Handle scroll effect to reduce navbar size
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 30) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -27,7 +27,7 @@ const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Products', href: '#products' },
-    { name: 'Gallery', href: '#gallery' },
+    // { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -62,10 +62,6 @@ const Header = () => {
             </svg>
           </div>
           <span className="phone-number">252-473-2579</span>
-          <div className="phone-right-lines">
-            <div className="phone-line"></div>
-            <div className="phone-line"></div>
-          </div>
         </a>
 
         {/* Mobile Menu Button */}

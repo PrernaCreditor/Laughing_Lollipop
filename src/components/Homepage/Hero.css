@@ -6,7 +6,7 @@
   background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 50%, #ffe6f0 100%);
   position: relative;
   overflow: hidden;
-  padding: 3rem 2rem;
+  padding: 1.5rem 2rem 3rem;
 }
 
 .hero::before {
@@ -40,6 +40,7 @@
   padding-top: 0;
   max-width: 600px;
   transition: all 0.4s ease;
+  margin-top: 0;
 }
 
 .hero-title {
@@ -150,7 +151,7 @@
   justify-content: flex-end;
   animation: fadeInRight 1s ease-out;
   position: relative;
-  padding-top: 2rem;
+  padding-top: 0;
   margin-top: 0;
 }
 
@@ -225,19 +226,23 @@
 }
 
 @keyframes float3D {
-  0%, 100% {
-    transform: translateY(0) rotateY(0deg);
+    0% {
+      transform: translateY(0) rotateY(0deg);
+    }
+    20% {
+      transform: translateY(6px) rotateY(2deg); /* slight downward dip */
+    }
+    50% {
+      transform: translateY(-10px) rotateY(3deg); /* gentle lift */
+    }
+    80% {
+      transform: translateY(4px) rotateY(-2deg); /* back down slightly */
+    }
+    100% {
+      transform: translateY(0) rotateY(0deg);
+    }
   }
-  25% {
-    transform: translateY(-15px) rotateY(5deg);
-  }
-  50% {
-    transform: translateY(-20px) rotateY(0deg);
-  }
-  75% {
-    transform: translateY(-15px) rotateY(-5deg);
-  }
-}
+  
 
 @keyframes pulseGlow {
   0%, 100% {
