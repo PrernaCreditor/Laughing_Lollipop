@@ -1,0 +1,383 @@
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 50%, #ffe6f0 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 2rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 105, 180, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.hero-content {
+  text-align: left;
+  animation: fadeInLeft 1s ease-out;
+  padding-top: 0;
+  max-width: 600px;
+  transition: all 0.4s ease;
+}
+
+.hero-title {
+  font-size: 5.5rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.title-line {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #c2185b;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.title-line:hover {
+  transform: translateY(-3px);
+  color: #ad1457;
+}
+
+.brand-name {
+  background: linear-gradient(135deg, #ff69b4 0%, #ff85c1 50%, #da70d6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  font-size: 5.5rem;
+  font-weight: 700;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+  white-space: nowrap;
+  letter-spacing: -1px;
+  transition: all 0.3s ease;
+}
+
+.brand-name:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.hero-line {
+  font-size: 1.4rem;
+  color: #555;
+  margin: 1.5rem 0 2rem;
+  font-weight: 500;
+  max-width: 500px;
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid #ff69b4;
+}
+
+.hero-cta {
+  margin-top: 0.5rem;
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff69b4, #ff85c1);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 105, 180, 0.4);
+}
+
+/* Hero Image - Right Corner */
+.hero-image {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  animation: fadeInRight 1s ease-out;
+  position: relative;
+  padding-top: 2rem;
+  margin-top: 0;
+}
+
+.donut-img {
+  width: auto;
+  max-width: 350px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(255, 105, 180, 0.25));
+  animation: float3D 5s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.donut-img:hover {
+  transform: translateY(-10px) rotateY(5deg) scale(1.05);
+  filter: drop-shadow(0 25px 50px rgba(255, 105, 180, 0.35));
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ff69b4;
+  }
+}
+
+@keyframes float3D {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotateY(5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(0deg);
+  }
+  75% {
+    transform: translateY(-15px) rotateY(-5deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.3));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.6));
+    transform: scale(1.02);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding-top: 0;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-name {
+    font-size: 4.5rem;
+  }
+
+  .title-line {
+    font-size: 2.2rem;
+  }
+
+  .hero-line {
+    font-size: 1.2rem;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-image {
+    justify-content: center;
+    order: -1;
+  }
+
+  .donut-img {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 75vh;
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-container {
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    justify-content: center;
+  }
+
+  .brand-name {
+    font-size: 4rem;
+  }
+
+  .title-line {
+    font-size: 1.8rem;
+  }
+
+  .hero-line {
+    font-size: 1.1rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  .donut-img {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 3rem;
+    justify-content: center;
+  }
+
+  .brand-name {
+    font-size: 3.5rem;
+  }
+
+  .title-line {
+    font-size: 1.6rem;
+  }
+
+  .hero-line {
+    font-size: 1rem;
+    margin: 0.8rem 0 1.2rem;
+  }
+
+  .donut-img {
+    max-width: 200px;
+  }
+
+  .btn-primary {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+  }
+}
