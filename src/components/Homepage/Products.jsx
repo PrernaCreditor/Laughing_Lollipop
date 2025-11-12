@@ -5,7 +5,7 @@ import dippinImg from '../../assets/Dippin.jpg';
 import chocoImg from '../../assets/Choco.jpg';
 import funImg from '../../assets/fun.jpg';
 import cottonImg from '../../assets/Cotton.jpg';
-import throwbackImg from '../../assets/donut_img.png';
+import throwbackImg from '../../assets/Throwback.png';
 
 // Replace img: null with imported images like:
 // import iceImg from '../../assets/ice.png';

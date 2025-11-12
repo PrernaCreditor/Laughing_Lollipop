@@ -25,14 +25,14 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2rem;
     padding: 1rem 2rem;
     position: relative;
     transition: all 0.3s ease;
   }
   
   .navbar.scrolled .navbar-container {
-    padding: 0.8rem 2rem;
+    padding: 0.4rem 1.2rem;
   }
   
   /* Logo Styles - INCREASED SIZE */
@@ -42,21 +42,19 @@
     z-index: 1001;
   }
   
+
   .logo-img {
-    height: 55px;
+    height: 56px;
     width: auto;
     transition: all 0.3s ease;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
   }
   
   .navbar.scrolled .logo-img {
-    height: 50px;
+    height: 44px;
   }
   
-  .logo-img:hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.25));
-  }
+/* Remove hover effect from logo */
   
   .logo-link {
     display: inline-block;
@@ -267,24 +265,24 @@
       display: flex;
       justify-content: space-between;
       grid-template-columns: none;
-      padding: 0.9rem 1.5rem;
+      padding: 0.45rem 0.7rem;
     }
   
     .navbar.scrolled .navbar-container {
-      padding: 0.7rem 1.5rem;
+      padding: 0.3rem 0.7rem;
     }
   
     .logo-img {
-      height: 48px;
-    }
-  
-    .navbar.scrolled .logo-img {
       height: 44px;
+    }
+
+    .navbar.scrolled .logo-img {
+      height: 36px;
     }
   
     .mobile-nav-link {
-      font-size: 1.05rem;
-      padding: 0.8rem 1rem;
+      font-size: 1.01rem;
+      padding: 0.7rem 0.7rem;
     }
   }
   
@@ -292,19 +290,19 @@
   @media (min-width: 768px) {
     .navbar-container {
       display: grid;
-      padding: 1rem 2rem;
+      padding: 0.55rem 1.2rem;
     }
   
     .navbar.scrolled .navbar-container {
-      padding: 0.8rem 2rem;
+      padding: 0.4rem 2rem;
     }
   
     .logo-img {
-      height: 55px;
+      height: 56px;
     }
-  
+
     .navbar.scrolled .logo-img {
-      height: 50px;
+      height: 44px;
     }
   
     .navbar-nav {
@@ -328,53 +326,53 @@
     }
   
     .nav-link {
-      font-size: 1.1rem;
+      font-size: 1.07rem;
     }
   }
   
   @media (min-width: 1024px) {
     .navbar-container {
-      padding: 1rem 2.5rem;
-      gap: 3rem;
+      padding: 0.55rem 2rem;
+      gap: 2.2rem;
     }
   
     .navbar.scrolled .navbar-container {
-      padding: 0.8rem 2.5rem;
+      padding: 0.4rem 2rem;
     }
   
     .logo-img {
-      height: 58px;
+      height: 64px;
     }
-  
+
     .navbar.scrolled .logo-img {
       height: 52px;
     }
   
     .nav-links {
-      gap: 3rem;
+      gap: 2.2rem;
     }
   
     .nav-link {
-      font-size: 1.15rem;
+      font-size: 1.09rem;
     }
   
     .phone-cta {
-      padding: 0.9rem 1.8rem;
-      font-size: 1.05rem;
+      padding: 0.7rem 1.3rem;
+      font-size: 0.98rem;
     }
   
     .phone-number {
-      font-size: 1.05rem;
+      font-size: 0.98rem;
     }
   
     .phone-icon-wrapper {
-      width: 42px;
-      height: 42px;
+      width: 36px;
+      height: 36px;
     }
   
     .phone-icon {
-      width: 22px;
-      height: 22px;
+      width: 18px;
+      height: 18px;
     }
   }
   

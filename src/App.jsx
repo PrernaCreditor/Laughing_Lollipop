@@ -3,14 +3,16 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Homepage from './pages/Homepage';
-import Contact from './components/Contact';
+import AboutPage from './pages/About/About';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Homepage />
-      <Contact />
+  <Homepage />
+  <AboutPage />
+  <Contact />
       <Footer />
     </div>
   );

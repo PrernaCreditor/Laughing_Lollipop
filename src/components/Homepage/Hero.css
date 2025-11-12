@@ -1,12 +1,12 @@
 .hero {
   min-height: 85vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 50%, #ffe6f0 100%);
   position: relative;
   overflow: hidden;
-  padding: 1.5rem 2rem 3rem;
+  padding: 2rem 1rem;
 }
 
 .hero::before {
@@ -28,39 +28,35 @@
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 3rem;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
   z-index: 1;
   width: 100%;
+  padding: 0 1rem;
 }
 
 .hero-content {
   text-align: left;
   animation: fadeInLeft 1s ease-out;
-  padding-top: 0;
   max-width: 600px;
-  transition: all 0.4s ease;
-  margin-top: 0;
 }
 
 .hero-title {
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   font-weight: 600;
-  margin-bottom: 1.2rem;
-  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 0.4rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .title-line {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color: #c2185b;
   animation: fadeInUp 0.8s ease-out 0.2s both;
-  white-space: nowrap;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
 }
@@ -75,13 +71,13 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  display: inline-block;
-  font-size: 5.5rem;
+  display: block;
+  font-size: 4.5rem;
   font-weight: 700;
   animation: fadeInUp 0.8s ease-out 0.4s both;
-  white-space: nowrap;
   letter-spacing: -1px;
   transition: all 0.3s ease;
+  line-height: 1.1;
 }
 
 .brand-name:hover {
@@ -89,12 +85,12 @@
 }
 
 .hero-line {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #555;
-  margin: 1.5rem 0 2rem;
+  margin: 1.5rem 0 2.5rem;
   font-weight: 500;
   max-width: 500px;
-  line-height: 1.7;
+  line-height: 1.6;
   animation: fadeInUp 0.8s ease-out 0.8s both;
   position: relative;
   padding-left: 1rem;
@@ -102,7 +98,7 @@
 }
 
 .hero-cta {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   animation: fadeInUp 0.8s ease-out 1s both;
 }
 
@@ -110,7 +106,7 @@
   display: inline-block;
   background: linear-gradient(135deg, #ff69b4, #ff85c1);
   color: white;
-  padding: 1rem 2.5rem;
+  padding: 1.2rem 2.8rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
@@ -119,6 +115,8 @@
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-primary::before {
@@ -147,25 +145,21 @@
 /* Hero Image - Right Corner */
 .hero-image {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   animation: fadeInRight 1s ease-out;
   position: relative;
-  padding-top: 0;
-  margin-top: 0;
 }
 
 .donut-img {
-  width: auto;
-  max-width: 350px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
   filter: drop-shadow(0 20px 40px rgba(255, 105, 180, 0.25));
   animation: float3D 5s ease-in-out infinite;
   transition: transform 0.3s ease;
   transform-style: preserve-3d;
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
+  margin-top: -32px;
 }
 
 .donut-img:hover {
@@ -207,136 +201,89 @@
   }
 }
 
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blinkCursor {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #ff69b4;
-  }
-}
-
 @keyframes float3D {
-    0% {
-      transform: translateY(0) rotateY(0deg);
-    }
-    20% {
-      transform: translateY(6px) rotateY(2deg); /* slight downward dip */
-    }
-    50% {
-      transform: translateY(-10px) rotateY(3deg); /* gentle lift */
-    }
-    80% {
-      transform: translateY(4px) rotateY(-2deg); /* back down slightly */
-    }
-    100% {
-      transform: translateY(0) rotateY(0deg);
-    }
+  0% {
+    transform: translateY(0) rotateY(0deg);
   }
-  
-
-@keyframes pulseGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.3));
-    transform: scale(1);
+  20% {
+    transform: translateY(6px) rotateY(2deg);
   }
   50% {
-    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.6));
-    transform: scale(1.02);
+    transform: translateY(-10px) rotateY(3deg);
   }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
+  80% {
+    transform: translateY(4px) rotateY(-2deg);
   }
   100% {
-    background-position: 200% center;
+    transform: translateY(0) rotateY(0deg);
   }
 }
 
-@keyframes slideIn {
-  from {
-    width: 0;
-    opacity: 0;
+/* ===== MOBILE RESPONSIVE DESIGN ===== */
+
+/* Tablet View (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 75vh;
+    padding: 2rem 1rem;
   }
-  to {
-    width: 100%;
-    opacity: 1;
+
+  .hero-container {
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .brand-name {
+    font-size: 3.5rem;
+  }
+
+  .title-line {
+    font-size: 2rem;
+  }
+
+  .hero-line {
+    font-size: 1.2rem;
+    margin: 1.2rem 0 2rem;
+  }
+
+  .donut-img {
+    max-width: 320px;
+    margin-top: -24px;
   }
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
+/* Mobile Landscape (568px - 767px) */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 70vh;
+    padding: 1.5rem 1rem;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     text-align: center;
   }
 
   .hero-content {
     text-align: center;
-    padding-top: 0;
     max-width: 100%;
+    order: 2;
   }
 
   .hero-title {
-    font-size: 4rem;
+    font-size: 3rem;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 1rem;
   }
 
   .brand-name {
-    font-size: 4.5rem;
-  }
-
-  .title-line {
-    font-size: 2.2rem;
-  }
-
-  .hero-line {
-    font-size: 1.2rem;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-image {
-    justify-content: center;
-    order: -1;
-  }
-
-  .donut-img {
-    max-width: 280px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: 75vh;
-    padding: 2rem 1.5rem;
-  }
-
-  .hero-container {
-    gap: 2rem;
-  }
-
-  .hero-title {
-    font-size: 3.5rem;
-    justify-content: center;
-  }
-
-  .brand-name {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .title-line {
@@ -345,44 +292,198 @@
 
   .hero-line {
     font-size: 1.1rem;
-    margin: 1rem 0 1.5rem;
+    margin: 1rem 0 1.8rem;
+    padding-left: 0;
+    border-left: none;
+    border-top: 3px solid #ff69b4;
+    padding-top: 0.8rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-image {
+    order: 1;
+    justify-content: center;
+  }
+
+  .donut-img {
+    max-width: 280px;
+    margin-top: -18px;
+  }
+
+  .btn-primary {
+    padding: 1rem 2.2rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* Mobile Portrait (480px - 567px) */
+@media (max-width: 567px) {
+  .hero {
+    min-height: 65vh;
+    padding: 1rem 0.8rem;
+  }
+
+  .hero-container {
+    gap: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    gap: 0.3rem;
+  }
+
+  .brand-name {
+    font-size: 2.5rem;
+  }
+
+  .title-line {
+    font-size: 1.5rem;
+  }
+
+  .hero-line {
+    font-size: 1rem;
+    margin: 0.8rem 0 1.5rem;
+    padding-top: 0.6rem;
+    line-height: 1.5;
+  }
+
+  .donut-img {
+    max-width: 220px;
+    margin-top: -12px;
   }
 
   .btn-primary {
     padding: 0.9rem 2rem;
     font-size: 1rem;
   }
-
-  .donut-img {
-    max-width: 250px;
-  }
 }
 
-@media (max-width: 480px) {
+/* Small Mobile (320px - 479px) */
+@media (max-width: 479px) {
+  .hero {
+    min-height: 60vh;
+    padding: 0.8rem 0.5rem;
+  }
+
+  .hero-container {
+    gap: 1.5rem;
+  }
+
   .hero-title {
-    font-size: 3rem;
-    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+    gap: 0.2rem;
   }
 
   .brand-name {
-    font-size: 3.5rem;
+    font-size: 2rem;
   }
 
   .title-line {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .hero-line {
-    font-size: 1rem;
-    margin: 0.8rem 0 1.2rem;
+    font-size: 0.9rem;
+    margin: 0.6rem 0 1.2rem;
+    padding-top: 0.5rem;
+    border-top-width: 2px;
   }
 
   .donut-img {
-    max-width: 200px;
+    max-width: 180px;
+    margin-top: -8px;
   }
 
   .btn-primary {
     padding: 0.8rem 1.8rem;
     font-size: 0.95rem;
   }
+}
+
+/* Extra Small Mobile (under 320px) */
+@media (max-width: 319px) {
+  .hero {
+    min-height: 55vh;
+    padding: 0.5rem 0.3rem;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .brand-name {
+    font-size: 1.7rem;
+  }
+
+  .title-line {
+    font-size: 1rem;
+  }
+
+  .hero-line {
+    font-size: 0.85rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .donut-img {
+    max-width: 150px;
+    margin-top: -7px;
+  }
+
+  .btn-primary {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix for very tall mobile screens */
+@media (max-height: 700px) and (max-width: 767px) {
+  .hero {
+    min-height: 80vh;
+  }
+}
+
+/* Fix for very short mobile screens */
+@media (max-height: 500px) {
+  .hero {
+    min-height: 100vh;
+  }
+  
+  .hero-container {
+    gap: 1rem;
+  }
+  
+  .hero-title {
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-line {
+    margin: 0.5rem 0 1rem;
+  }
+}
+
+/* Ensure content doesn't get too squished */
+@media (max-width: 767px) {
+  .hero-content {
+    min-height: auto;
+  }
+  
+  .hero-image {
+    min-height: auto;
+  }
+}
+
+/* Prevent horizontal scrolling */
+.hero {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.hero-container {
+  width: 100%;
+  box-sizing: border-box;
 }

@@ -1,0 +1,464 @@
+/* Centering wrapper for better framing */
+.contact-align-center {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff5f7 0%, #faf2f3 50%, #ffffff 100%);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add some subtle candy-themed background elements */
+.contact-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.contact-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* Main Header */
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+  text-shadow: none;
+  position: relative;
+}
+
+.main-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff80ab, #e91e63);
+  border-radius: 2px;
+}
+
+
+.main-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #222;
+  line-height: 1.6;
+  opacity: 1;
+}
+
+/* Contact Boxes */
+.contact-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+
+.contact-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 
+    0 10px 30px rgba(233, 30, 99, 0.08),
+    0 5px 15px rgba(255, 128, 171, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  color: #222;
+  text-align: left;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 20px 40px rgba(233, 30, 99, 0.12),
+    0 10px 25px rgba(255, 128, 171, 0.08);
+}
+
+.form-box {
+  border-left: 4px solid #ff80ab;
+}
+
+.info-box {
+  border-left: 4px solid #f8bbd0;
+}
+
+/* Social section and icons are defined above. Mobile centering is handled at the end of the file. */
+
+.icon-wrapper i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+
+.box-header h2 {
+  font-size: 1.8rem;
+  color: #222;
+  font-weight: 600;
+}
+
+
+.box-description {
+  color: #222;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  opacity: 1;
+}
+
+/* Form Styles */
+.contact-form {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  position: relative;
+}
+
+.form-group.full-width {
+  flex: 2;
+}
+
+/* Add gap between subject and message blocks */
+.contact-form .form-group.full-width:not(:last-of-type) {
+  margin-bottom: 18px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 15px;
+  color: #e91e63;
+  font-size: 1.1rem;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper.textarea-wrapper i {
+  top: 15px;
+  align-self: flex-start;
+}
+
+
+.input-wrapper input,
+.input-wrapper textarea {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 2px solid #f8bbd0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 245, 245, 0.8);
+  font-family: inherit;
+  color: #222;
+}
+
+
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+.input-wrapper.textarea-wrapper textarea {
+  padding-top: 15px;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+  outline: none;
+  border-color: #e91e63;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+  transform: translateY(-2px);
+}
+
+.input-wrapper input:focus + i,
+.input-wrapper textarea:focus + i {
+  color: #c2185b;
+  transform: scale(1.1);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 16px 30px;
+  background: linear-gradient(135deg, #e91e63, #ff80ab);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+  background: linear-gradient(135deg, #d81b60, #f06292);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Contact Details */
+.contact-details {
+  margin-bottom: 30px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(255, 245, 245, 0.8), rgba(255, 240, 245, 0.6));
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 205, 210, 0.5);
+}
+
+.detail-item:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 245, 245, 0.8));
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.1);
+}
+
+.detail-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff80ab, #e91e63);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(233, 30, 99, 0.2);
+}
+
+.detail-icon i {
+  color: white;
+  font-size: 1.2rem;
+}
+
+
+.detail-content h3 {
+  color: #222;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+.detail-content p {
+  color: #222;
+  line-height: 1.5;
+  opacity: 1;
+  justify-content: center;
+}
+
+/* Social Media Section */
+
+.social-section {
+  border-top: 2px solid #f8bbd0;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.social-section h3 {
+  color: #222;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon.facebook { 
+  background: linear-gradient(135deg, #1877f2, #3b5998); 
+}
+.social-icon.instagram { 
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); 
+}
+.social-icon.twitter { 
+  background: linear-gradient(135deg, #1da1f2, #1a91da); 
+}
+.social-icon.linkedin { 
+  background: linear-gradient(135deg, #0077b5, #006699); 
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .contact-boxes {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .main-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    padding: 60px 15px;
+  }
+
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-box {
+    padding: 30px 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .box-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .icon-wrapper {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .detail-icon {
+    margin-right: 0;
+    margin-bottom: 15px;
+    align-self: center;
+  }
+
+  .detail-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-box {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.form-box {
+  animation-delay: 0.1s;
+}
+
+.info-box {
+  animation-delay: 0.2s;
+}

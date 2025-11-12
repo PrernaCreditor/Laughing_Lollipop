@@ -1,27 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../assets/laugh_logo.png';
+import React, { useState } from 'react';
+import logo from '../assets/logo_laugh.png';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle scroll effect to reduce navbar size
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -32,14 +20,17 @@ const Header = () => {
   ];
 
   return (
-    <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <header className="navbar">
       <div className="navbar-container">
         {/* Logo */}
-        <div className="navbar-logo">
-          <a href="#home" className="logo-link">
-            <img src={logo} alt="Laughing Lollipop" className="logo-img" />
-          </a>
-        </div>
+       <div className="navbar-logo">
+  <a href="#home" className="logo-link">
+    <div className="logo-wrapper">
+      <img src={logo} alt="Laughing Lollipop" className="logo-img" />
+    </div>
+  </a>
+</div>
+
 
         {/* Desktop Navigation */}
         <nav className="navbar-nav">
